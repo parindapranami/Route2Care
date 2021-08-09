@@ -47,7 +47,7 @@ a {
 button {
 	border-radius: 20px;
 	border: 1px solid #02052e;
-	background-color: #02052e;
+	background-color: #104911;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -90,6 +90,7 @@ input {
 }
 
 .container {
+	
 	background-color: #fff;
 	border-radius: 10px;
   	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
@@ -160,11 +161,11 @@ input {
 }
 
 .overlay {
-	background: #02052e;
-	background: -webkit-linear-gradient(to right, #02052e, #02052e);
-	background: linear-gradient(to right, #02052e, #05093a);
+	background-image:url('img/medicine.jpeg') ;
+	background-repeat:  no-repeat;
+    background-position: center;
+	
 	background-repeat: no-repeat;
-	background-size: cover;
 	background-position: 0 0;
 	color: #FFFFFF;
 	position: relative;
