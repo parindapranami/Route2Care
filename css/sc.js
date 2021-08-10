@@ -1,23 +1,25 @@
-const b = document.querySelector('.topB');
-const c = document.querySelector('.topC');
-b.classList.remove('fadeInUp');
-b.classList.remove('animated');
-c.classList.remove('fadeInUp');
-c.classList.remove('animated');
-
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      b.classList.add('fadeInUp');
-      b.classList.add('animated');
-      return;
-    }
-
-    b.classList.remove('fadeInUp');
-    b.classList.remove('animated');
-  });
-
+jQuery(document).ready(function($) {
+    "use strict";
+    //  TESTIMONIALS CAROUSEL HOOK
+    $('#customers-testimonials').owlCarousel({
+        loop: true,
+        center: true,
+        items: 3,
+        margin: 0,
+        autoplay: true,
+        dots:true,
+        autoplayTimeout: 8500,
+        smartSpeed: 450,
+        responsive: {
+          0: {
+            items: 1
+          },
+          768: {
+            items: 2
+          },
+          1170: {
+            items: 3
+          }
+        }
+    });
 });
-
-observer.observe(document.querySelector('.brands'));
