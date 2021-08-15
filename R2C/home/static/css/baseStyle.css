@@ -1,0 +1,46 @@
+/* Base- Header & Footer */
+.navbg{
+    background-color:#104911;
+    color:white;
+}
+.footer {
+    background-color:#104911;
+    color:white;
+    text-align: center;
+}
+.follow h3 {
+    color: #fff;
+    font-size:250%;
+    padding-bottom: 25px;
+}
+.follow ul li {
+    display: inline-block;
+    margin : 0 4px;
+}
+.follow ul li a {
+    color: #252525;
+    background: #fff;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 110px;
+    font-size: 27px;
+    text-decoration:none;
+    padding: 0%;
+    margin-right:30px;
+}
+.follow ul li a:hover {
+    color: #104911;
+}
+.copyright {
+    background: #0f0f0f;
+    text-align: center;
+}
+.copyright p {
+    color: #fff;
+    font-size:120%;
+
+}
