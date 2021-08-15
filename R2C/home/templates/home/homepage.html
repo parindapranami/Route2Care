@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE>
 <html>
 <head>
@@ -16,8 +18,8 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
 
-<link href="css/style.css" rel="stylesheet">
-<script src='css/sc.js' ></script>
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+<script src="{% static 'js/home.js' %}"></script>
 
 </head>
 <body>
@@ -28,11 +30,13 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 <div class="container-fluid">
 
 	<div class="d-flex align-items-center" id="">
-	<a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="img/logo2.png" height="75"alt=""></a>
+	<a class="navbar-brand mt-2 mt-lg-0" href="#"><img src="{% static 'images/logo2.png' %}" height="75"alt=""></a>
+	<!-- templates/home/login.html -->
 	</div>
 
 	<div class="d-flex align-items-center">
-	<a class="navbar-brand mt-2 mt-lg-0" data-toggle="modal" data-target="#myModal" href="login.html"><img src="img/user2.png" height="45"alt=""></a>
+	<a class="navbar-brand mt-2 mt-lg-0" data-toggle="modal" data-target="#myModal" href="#"><img src="{% static 'images/user2.png' %}" height="45"alt=""></a>
+	
 	</div> 
 
 </div>
@@ -44,27 +48,27 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 
 <div class='row' id='svgs'>
   <div class='col-md-6 col-xs-12 '>
-	<img src="img/pharma.svg" style='margin-left:50px;' height="100%" width="75%" alt="">
+	<img src="{% static 'images/pharma.svg' %}" style='margin-left:50px;' height="100%" width="75%" alt="">
   </div>
 
   <div class='col-md-6 col-xs-12 row mt-5'>
 		<div style="text-align: center;" class='col-md-6'>
-		<img src="img/1.svg" >
+		<img src="{% static 'images/1.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
 		<div style="text-align: center;" class='col-md-6'>
-		<img src="img/2.svg" >
+		<img src="{% static 'images/2.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
 		<div style="text-align: center;" class='col-md-6'>
-		<img src="img/3.svg" >
+		<img src="{% static 'images/3.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
 		<div style="text-align: center;"class='col-md-6'>
-		<img src="img/4.svg">
+		<img src="{% static 'images/4.svg' %}">
 		<h3>Families served</h3>
 		</div> 
   </div>
@@ -151,28 +155,28 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 <h2 class='homehead'>Why Route2Care</h2>
 <div class='row pt-3'>
 	<div class='col-md-6 col-12 row'> 
-		<img class='col-md-3 col-3 pt-2' src='img/why3.png' height='70%' width='20%'>
+		<img class='col-md-3 col-3 pt-2' src="{% static 'images/why3.png' %}" height='70%' width='20%'>
 		<div class='col-md-9 col-9'>
 		<h4>Maximize Your Savings</h4>
 		<p>Route2Care offers various discounts and rewards.</p>
 		</div>
 	</div>
 	<div class='col-md-6 col-12 row'> 
-		<img class='col-md-3 col-3 pt-2' src='img/why1.png' height='70%' width='12%'>
+		<img class='col-md-3 col-3 pt-2' src="{% static 'images/why1.png' %}" height='70%' width='12%'>
 		<div class='col-md-9 col-9'>
 		<h4>Click and Pick</h4>
 		<p>Click to buy a range of products across categories.</p>
 		</div>
 	</div>
 	<div class='col-md-6 col-12 row'> 
-		<img class='col-md-3 col-3 pt-2' src='img/why4.png' height='70%' width='20%'>
+		<img class='col-md-3 col-3 pt-2' src="{% static 'images/why4.png' %}" height='70%' width='20%'>
 		<div class='col-md-9 col-9'>
 		<h4>Home Delivery</h4>
 		<p>We offer convenient home delivery of medicines & general goods.</p>
 		</div>
 	</div>
 	<div class='col-md-6 col-12 row'> 
-		<img class='col-md-3 col-3 pt-2' src='img/why2.png' height='70%' width='12%'>
+		<img class='col-md-3 col-3 pt-2' src="{% static 'images/why2.png' %}" height='70%' width='12%'>
 		<div class='col-md-9 col-9'>
 		<h4>24/7 Service</h4>
 		<p>Our services are available to you 24/7.</p>
@@ -192,7 +196,7 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 	<!--TESTIMONIAL 1 -->
 	<div class="item">
 		<div class="shadow-effect">
-		<img class="rounded-circle" src="img/pharma.svg" alt="">
+		<img class="rounded-circle" src="{% static 'images/pharma.svg' %}" alt="">
 		<p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
 		</div>
 		<div class="testimonial-name">EMILIANO AQUILANI</div>
