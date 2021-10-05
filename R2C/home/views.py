@@ -11,6 +11,12 @@ from .forms import CreateUserForm, CustomerForm
 def homePage(request):
   return render(request,'home/homepage.html')
 
+def medicineDashboard(request):
+  return render(request,'home/medicine_dashboard.html')
+
+def medicinePage(request):
+  return render(request,'home/medicinePage.html')
+
 def registerPage(request):
   form = CreateUserForm()
   if request.method == 'POST':

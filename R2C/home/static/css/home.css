@@ -165,3 +165,17 @@ display: inline-block;
     transition: all 250ms ease-out 0s;
     width: 20px;
 }
+
+body{
+  font-family: 'Montserrat';
+}
+.card{
+  height:10%;
+  width:13%;
+  border:none;
+}
+.card h5{
+  font-size: 1.2vw;
+  text-align: center;
+  margin-top: 5%;
+}

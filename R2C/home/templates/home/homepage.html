@@ -4,19 +4,28 @@
 <!DOCTYPE>
 <html>
 <head>
-<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
-
-
-
-<link href="{% static 'css/home.css' %}" rel="stylesheet">
-<link href="{% static 'css/baseStyle.css' %}" rel="stylesheet">
-<script src="{% static 'js/home.js' %}"></script>
-
+	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+	<link href="{% static 'css/home.css' %}" rel="stylesheet">
+	<link href="{% static 'css/baseStyle.css' %}" rel="stylesheet">
+	<script src="{% static 'js/home.js' %}"></script>
+	<style>
+		.card{
+		height:10%;
+		width:15%;
+		border:none;
+		}
+		.card h5{
+		font-size: 1.2vw;
+		text-align: center;
+		margin-top: 5%;
+		}
+	</style>
 </head>
 <body>
 
 
-<div class='container brands'>
+<div class='container'>
 <div class='jumbotron car mt-4'>
 <h1 class='carTitle'>Route2Care</h1>
 </div>
@@ -27,22 +36,22 @@
   </div>
 
   <div class='col-md-6 col-xs-12 row mt-5'>
-		<div style="text-align: center;" class='col-md-6'>
+		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/1.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
-		<div style="text-align: center;" class='col-md-6'>
+		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/2.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
-		<div style="text-align: center;" class='col-md-6'>
+		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/3.svg' %}">
 		<h3>Families served</h3>
 		</div>
 
-		<div style="text-align: center;"class='col-md-6'>
+		<div style="text-align: center;"class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/4.svg' %}">
 		<h3>Families served</h3>
 		</div> 
@@ -51,79 +60,49 @@
 </div>
 
 
-
-
-<!-- Brands -->
-<!--<div class=' topB row animated fadeInUp mt-5'> -->
-<div class='mt-5 row' data-aos='fade-up'>
-<h2 class='homehead' >Top Brands</h2>
-	<div class="col-md-3 w-5">
-		<img class="card-img-top" src="{% static 'images/b1.jpg' %}" alt="Card image cap" >
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-    <div class="card col-md-3">
-		<img class="card-img-top" src="{% static 'images/b2.jpg' %}" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-    <div class="card col-md-3">
-		<img class="card-img-top" src="{% static 'images/b3.jpg' %}" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-    <div class="card col-md-3">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-    <div class="card col-md-3">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-    <div class="card col-md-3">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
-
-</div>
-
 <!-- Categories -->
 <div class='mt-5 row' data-aos='fade-up'>
 <h2 class='homehead' >Categories</h2>
 	<div class="card col-md-4">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
+		<img class="card-img-top" src="">
 		<h5 class="card-title">B1</h5>
-		</div>
 	</div>
 
-    <div class="card col-md-4">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
-		</div>
-	</div>
+</div>
 
-    <div class="card col-md-4">
-		<img class="card-img-top" src="" alt="Card image cap">
-		<div class="card-body">
-		<h5 class="card-title">B1</h5>
+<!-- Brands -->
+<!--<div class=' topB row animated fadeInUp mt-5'> -->
+<div class='mt-5 row brands' data-aos='fade-up'>
+	<h2 class='homehead' >Top Brands</h2>
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b1.jpg' %}">
+			<h5 class="p-1 pt-2">Horlicks</h5>
 		</div>
-	</div>
+	
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b2.png' %}">
+			<h5 class="p-1 pt-2">Dabur</h5>
+		</div>
+	
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b7.jpg' %}">
+			<h5 class="p-1 pt-2">One Touch</h5>
+		</div>
+	
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b4.png' %}">
+			<h5 class="p-1 pt-2">Mamaearth</h5>
+		</div>
+	
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b5.png' %}">
+			<h5 class="p-1 pt-2">Dettol</h5>
+		</div>
+	
+		<div class="card col-md-2 m-md-1">
+			<img class="card-img-top" src="{% static 'images/b6.jpg' %}">
+			<h5 class="p-1 pt-2">Nivea</h5>
+		</div>
 </div>
 
 <div class='mt-5' id='why' data-aos='fade-up'>
