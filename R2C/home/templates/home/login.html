@@ -35,7 +35,7 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 	</div>  
 <div class="col-md-8 container" id="container">
 	
-	<div class="form-container sign-up-container ">
+	<!-- <div class="form-container sign-up-container ">
 		<form action="#">
 			<h1>Sign Up</h1>
 			
@@ -47,29 +47,35 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 
 			<button>Sign Up</button>
 		</form>
-	</div>
+	</div> -->
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form method="POST" action="/">
+			{% csrf_token %}
 			<h1>Sign in</h1>
 
-			<input type="email" placeholder="Email" />
+			<input type="text" placeholder="Username" />
 			<input type="password" placeholder="Password" />
 			
 
-			<button>Sign In</button>
+			<button type='submit'>Sign In</button>
 		</form>
+		<!-- {% for message in messages %}
+		<p id="messages">{{message}}</p>
+		{% endfor %} -->
 	</div>
+
+		
 	<div class="overlay-container">
 		<div class="overlay">
-			<div class="overlay-panel overlay-left">
+			<!-- <div class="overlay-panel overlay-left">
 				<h1>Welcome Back!</h1>
 				<p>To keep connected with us please login</p>
 				<button class="ghost" id="signIn">Sign In</button>
-			</div>
+			</div> -->
 			<div class="overlay-panel overlay-right">
 				<h1>Greetings!</h1>
 				<p>Start an account in just a few steps to begin your journey</p>
-				<button class="ghost" id="signUp">Sign Up</button>
+				<button class="ghost" id="signUp"><a href="{% url 'register'  %}">Sign Up</a></button>
 			</div>
 		</div>
 	</div>
