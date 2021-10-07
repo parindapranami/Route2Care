@@ -12,10 +12,15 @@ def homePage(request):
   return render(request,'home/homepage.html')
 
 def medicineDashboard(request):
-  return render(request,'home/medicine_dashboard.html')
+  m = Medicine.objects.all()
+  return render(request,'home/medicine_dashboard.html', {"meds": m})
 
-def medicinePage(request):
-  return render(request,'home/medicinePage.html')
+# def medicinePage(request):
+#   return render(request,'home/medicine_page.html')
+
+def medicinePage(request,id):
+    medPage = Medicine.objects.get(id=id)
+    return render(request, 'home/medicine_page.html', {'med': medPage})
 
 def registerPage(request):
   form = CreateUserForm()

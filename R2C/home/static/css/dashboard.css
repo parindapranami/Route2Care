@@ -1,4 +1,9 @@
+/* Medicine Card */
 .medicineList a
+{
+    text-decoration: none;
+}
+.product-details a
 {
     text-decoration: none;
 }
@@ -28,7 +33,7 @@
     padding: 30px;
 }
 
-.product-catagory {
+.product-category {
     display: block;
     font-size: 12px;
     font-weight: 700;
@@ -91,6 +96,7 @@
     color: #104911;
 }
 
+/* Medicine Dashboard */
 .custDashboard{
     background-repeat:  no-repeat;
     background-size: cover;
@@ -116,4 +122,38 @@
 }
 .dashTitle{
     border-left : solid #104911 px;
+}
+
+/* Medicine Page */
+.medPage{
+    margin:5% 2%;
+    margin-bottom:20%;
+    padding:3%;
+    border: 1px solid #104911;
+}
+.medBrand{
+    color:#104911;
+    font-size:80%;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.medTitle{
+    text-transform: uppercase;
+    font-size:250%;
+}
+.medHeading{
+    font-size:120%;
+    padding:2% 0 0 0;
+}
+.medPage p{
+    font-size: 75%;
+}
+.medPrice{
+    font-size:180%;
+    font-weight: bold;
+    color:#104911;
+    padding:3% 0 2% 0;
+}
+.addToCart{
+    width:50%;
 }

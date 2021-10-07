@@ -1,0 +1,76 @@
+{%extends 'home/base.html'%}
+{% load static %}
+{%block body%}
+<html>
+<head>
+	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+	<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+
+</head>
+<body>
+
+<div class='container'>
+
+<div class='medPage row'>
+	<img class='col-md-4' src="{% static 'images/b7.jpg' %}" alt='Medicine Thumbnail' height='150%' width='100%'>
+	<div class='col-md-8 px-md-5 mt-sm-2'>
+		<h1 class='medTitle'>{{med.med_name}}</h1>
+		<h5 class='medBrand'>{{med.manufacturer}}</h5>
+		<hr>
+		<h2 class='medPrice'>Rs. {{med.mrp}}</h2>
+		
+		<div class='pres my-2'>
+			<h3 class='medHeading'>Upload Prescription</h3>
+			<input type="file" class='form-control' required>
+		</div>
+
+		<button class='btn btn-dark my-3 p-2 addToCart'>Add To Cart</button>
+
+		<div class='row mt-4'>
+			<div class='col-md-4'>
+				<h3 class='medHeading showUses'>Uses</h3>
+				<div class='uses'>
+					<p>{{med.uses}}</p>
+				</div>
+			</div>
+			
+			<div class='col-md-4'>
+			<h3 class='medHeading showEffects'>Side Effects</h3>
+			<div class='sideeffects'>
+			<p>{{med.side_effects}}</p>
+			</div>
+			</div>
+
+			<div class='col-md-4'>
+				<h3 class='medHeading showCons'>Constituents</h3>
+				<div class='cons'>
+				<p>{{med.salt}}</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+</div>
+<script>
+		$(document).ready(function(){
+			$(".uses").hide();
+			$(".sideeffects").hide();
+			$(".cons").hide();
+		  $(".showUses").click(function(){
+			$(".uses").toggle();
+		  });
+		  $(".showEffects").click(function(){
+			$(".sideeffects").toggle();
+		  });
+		  $(".showCons").click(function(){
+			$(".cons").toggle();
+		  });
+		});
+	</script>
+<body>
+</html>
+
+
+{%endblock body%}

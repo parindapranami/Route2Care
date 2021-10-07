@@ -19,73 +19,24 @@
 </div>
 
 <div class='medicineList  row'>
+{% for med in meds %}
+	
 	<div class="product-card col-md-3">
 		<div class="product-tumb">
 			<img src="" alt="Medicine Image">
 		</div>
 		<div class="product-details">
-			<span class="product-catagory">Category</span>
-			<h4><a href="">Med Name</a></h4>
-			<p>Descriptionnnnn</p>
+			<span class="product-category">Medicines</span>
+			<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{med.med_name}}</a></h4>
 			<div class="product-bottom-details">
-				<div class="product-price">Price</div>
+				<div class="product-price">Rs. {{med.mrp}}</div>
 				<div class="product-links">
 					<a href=""><i class="fa fa-shopping-cart"></i></a>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="product-card col-md-3">
-		<div class="product-tumb">
-			<img src="" alt="Medicine Image">
-		</div>
-		<div class="product-details">
-			<span class="product-catagory">Category</span>
-			<h4><a href="">Med Name</a></h4>
-			<p>Descriptionnnnn</p>
-			<div class="product-bottom-details">
-				<div class="product-price">Price</div>
-				<div class="product-links">
-					<a href=""><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="product-card col-md-3">
-		<div class="product-tumb">
-			<img src="" alt="Medicine Image">
-		</div>
-		<div class="product-details">
-			<span class="product-catagory">Category</span>
-			<h4><a href="">Med Name</a></h4>
-			<p>Descriptionnnnn</p>
-			<div class="product-bottom-details">
-				<div class="product-price">Price</div>
-				<div class="product-links">
-					<a href=""><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="product-card col-md-3">
-		<div class="product-tumb">
-			<img src="" alt="Medicine Image">
-		</div>
-		<div class="product-details">
-			<span class="product-catagory">Category</span>
-			<h4><a href="">Med Name</a></h4>
-			<p>Descriptionnnnn</p>
-			<div class="product-bottom-details">
-				<div class="product-price">Price</div>
-				<div class="product-links">
-					<a href=""><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
+{%endfor%}
 </div>
 
 </div>
