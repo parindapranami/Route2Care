@@ -1,48 +1,60 @@
 {%extends 'home/base.html'%}
 {% load static %}
 {%block body%}
-<html>
-<head>
-	<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
-	<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
-</head>
-<body>
+	<html>
+	<head>
+		<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+		<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+	</head>
+	<body>
 
-<div class='container'>
+	<div class='container'>
 
-<div class='jumbotron custDashboard mt-4 row'>
-<div class='col-md-6 dashTitle'>
-	<h1 class=''>Route2Care</h1>
-	<h3 class='dashName'>Welcome , Name</h3>
-</div>
-<img class='col-md-6' src="{% static 'images/dashboard.png' %}" >
-</div>
-
-<div class='medicineList  row'>
-{% for med in meds %}
-	
-	<div class="product-card col-md-3">
-		<div class="product-tumb">
-			<img src="" alt="Medicine Image">
-		</div>
-		<div class="product-details">
-			<span class="product-category">Medicines</span>
-			<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{med.med_name}}</a></h4>
-			<div class="product-bottom-details">
-				<div class="product-price">Rs. {{med.mrp}}</div>
-				<div class="product-links">
-					<a href=""><i class="fa fa-shopping-cart"></i></a>
-				</div>
-			</div>
-		</div>
+	<div class='jumbotron custDashboard mt-4 row'>
+	<div class='col-md-6 dashTitle'>
+		<h1 class=''>Route2Care</h1>
+		<h3 class='dashName'>Welcome , Name</h3>
 	</div>
-{%endfor%}
-</div>
+	<img class='col-md-6' src="{% static 'images/dashboard.png' %}" >
+	</div>
 
-</div>
-</div>
-<body>
-</html>
+	<div class='medicineList  row'>
+	
+	{% for med in page_obj.object_list %}
+	
+		<div class="product-card col-md-3">
+			<div class="product-tumb">
+				<!-- web scraping here -->
+				<img src="{% static 'images/aceclofenac.png' %}" alt="Medicine Image">
+			</div>
+			<div class="product-details">
+				<span class="product-category">Medicines</span>
+				<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{ med.med_name }}</a></h4>
+				<div class="product-bottom-details">
+					<div class="product-price">Rs. {{ med.mrp }}</div>
+					<div class="product-links">
+						<a href=""><i class="fa fa-shopping-cart"></i></a>
+					</div>
+				</div>				
+			</div>
+			
+		</div>
+	{% endfor %}
+	</div>
+	<center>
+        {%if page_obj.has_previous %} {# whether the previous page exists #}
+            <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
+        {% endif %}
+        <span>{{page_obj.number}}</span> {# the current page number #}
+        
+        {%if page_obj.has_next %} {# whether the next page exists #}
+            <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
+        {% endif %}
+    </center>
+	</div>
+	</div>
+	<body>
+	</html>
 
 
-{%endblock body%}
+{%endblock%}

@@ -24,6 +24,13 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
 <script src="{% static 'js/home.js' %}"></script>
 
+<style>
+	.searchBar{
+		width:150%;
+	}
+	
+</style>
+
 </head>
 <body>
 
@@ -34,7 +41,19 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 
 	<div class="d-flex align-items-center" id="">
 	<a class="navbar-brand mt-1 mt-lg-0 p-0" href="#"><img src="{% static 'images/logo2.png' %}" height="70"alt=""></a>
+	<div class=''>
+		<!-- Search form -->
+		<form class="form-inline ml-auto mt-1 mb-0">
+		  <div class="md-form">
+			<input class="form-control mr-sm-2 searchBar" type="text" placeholder="Search" aria-label="Search">
+		  </div>
+		</form>
+	</div>
 	<!-- templates/home/login.html -->
+	</div>
+
+	<div class="md-form my-1">
+		
 	</div>
 
 	<div class="d-flex align-items-center">

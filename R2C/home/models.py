@@ -15,14 +15,6 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
-# class Medicines(models.Model):
-#     med_name = models.CharField(max_length=200,null=True)
-#     manufacturer = models.CharField(max_length=200,null=True)
-#     price = models.IntegerField(null=True)
-
-#     def __str__(self):
-#         return self.med_name
-
 class Medicine(models.Model):
     med_name = models.CharField(("Medicine Name"),max_length=200,null=False,default="Crocin")
     prescription = models.CharField(("Prescription"),max_length=500,null=False,default="Y")
@@ -36,10 +28,15 @@ class Medicine(models.Model):
     def __str__(self):
         return self.med_name
 
-# class prescription(models.Model):
-    # date=models.DateField(auto_now_add=True)
-    # med_name=models.CharField(max_length=200)
-    # quantity=models.IntegerField()
+# class Category(models.Model):
+#     category = models.CharField(("Category"),max_length=200,null=True)
+#     med_name = models.CharField(("Name"),max_length=200,null=False,default="Crocin")
+#     Type_of_Sell = models.CharField(("Type of Sell"),max_length=500,null=True)
+#     mrp = models.CharField(("MRP"),max_length=500,null=False,default='50')
+#     manufacturer = models.CharField(("Manufacturer"),max_length=500,null=False,default="Cipla")
+    
+#     def __str__(self):
+#         return self.med_name
 
 class Order(models.Model):
     STATUS = (
