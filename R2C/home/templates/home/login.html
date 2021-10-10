@@ -24,10 +24,37 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
 
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" href="{% static 'css/baseStyle.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbg mb-5">
+<div class="container-fluid">
+
+	<div class="d-flex align-items-center" id='r2c'>
+	<h1>Route2Care</h1>
+	
+	
+	<div class="input-group search mx-5"> 
+	<form action='/search' method='get'>
+		<input type="text" class="form-control input-text sb" placeholder="Search" name='search'>
+		<!--<button class="btn" type="submit">Search</button></input>-->
+	</form>
+	</div>
+	<!-- templates/home/login.html -->
+	</div>
+
+	<div class="d-flex align-items-center">
+	<a class="navbar-brand mt-1 mt-lg-0 p-0" href="/products"><img src="{% static 'images/logo2.png' %}" height="45"alt=""></a>
+	<a class="navbar-brand mt-1 mt-lg-0 p-0" data-toggle="modal" data-target="#myModal" href="/login"><img src="{% static 'images/user2.png' %}" height="45"alt=""></a>
+	</div> 
+
+</div>
+</nav>
+<!--Header Ends-->
 
 <div class='row login'> 
 <div class='col-md-4 col-xs-12'>
@@ -81,6 +108,24 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 	</div>
 </div>
 </div>
+<!-- Footer -->
+<footer class='footer mt-5 pt-5'>
+<div class="">
+	<div class="col-md-12">
+		<div class="follow">
+		<h3>Route2Care</h3>
+		<ul >
+			<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+			<li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+		</ul>
+		</div>
+	</div>
+</div>
+<div class="col-md-12 copyright mt-5 py-2">
+	<p class='pt-2'>&copy; 2021 All Right Reserved</p>
+</div>
+</footer>
 <script src="{% static 'js/login.js' %}"></script>
 
 </body>

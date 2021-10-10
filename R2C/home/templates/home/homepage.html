@@ -9,25 +9,13 @@
 	<link href="{% static 'css/home.css' %}" rel="stylesheet">
 	<link href="{% static 'css/baseStyle.css' %}" rel="stylesheet">
 	<script src="{% static 'js/home.js' %}"></script>
-	<style>
-		.card{
-		height:10%;
-		width:15%;
-		border:none;
-		}
-		.card h5{
-		font-size: 1.2vw;
-		text-align: center;
-		margin-top: 5%;
-		}
-	</style>
+
 </head>
 <body>
 
 
 <div class='container'>
 <div class='jumbotron car mt-4'>
-<h1 class='carTitle'>Route2Care</h1>
 </div>
 
 <div class='row' id='svgs'>
@@ -38,22 +26,22 @@
   <div class='col-md-6 col-xs-12 row mt-5'>
 		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/1.svg' %}">
-		<h3>Families served</h3>
+		<div><span>1 Crore+</span><h3>Orders Delivered</h3></div>
 		</div>
 
 		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/2.svg' %}">
-		<h3>Families served</h3>
+		<div><span>1 Lakh+</span> <h3>Medicines Available</h3></div>
 		</div>
 
 		<div style="text-align: center;" class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/3.svg' %}">
-		<h3>Families served</h3>
+		<div><span>20k+</span> <h3>Pincodes Served</h3></div>
 		</div>
 
 		<div style="text-align: center;"class='col-md-6 col-xs-6'>
 		<img src="{% static 'images/4.svg' %}">
-		<h3>Families served</h3>
+		<div><span>50K+</span><h3>Families served</h3></div>
 		</div> 
   </div>
 
@@ -61,18 +49,31 @@
 
 
 <!-- Categories -->
-<div class='mt-5 row' data-aos='fade-up'>
-<h2 class='homehead' >Categories</h2>
-	<div class="card col-md-4">
-		<img class="card-img-top" src="">
-		<h5 class="card-title">B1</h5>
-		<div class="product-bottom-details">
-			<div class="product-price">Rs. </div>
-			<div class="product-links">
-				<a href=""><i class="fa fa-shopping-cart"></i></a>
-			</div>
-		</div>				
+
+<div class='mt-5 row cats' data-aos='fade-up'>
+<div  class='pull-left'><h2 class='homehead' >Categories</h2></div>
+
+	<div class="card col-md-3 m-md-1">
+		<img class="card-img-top" src="{% static 'images/c1.png' %}">
+		<h5 class="p-1 pt-2">Medical Devices</h5>
 	</div>
+
+	<div class="card col-md-3 m-md-1">
+		<img class="card-img-top" src="{% static 'images/c2.png' %}">
+		<h5 class="p-1 pt-2">Ayurvedic Care</h5>
+	</div>
+
+	<div class="card col-md-3 m-md-1">
+		<img class="card-img-top" src="{% static 'images/c3.png' %}">
+		<h5 class="p-1 pt-2">Skin Care</h5>
+	</div>
+
+	<div class="card col-md-3 m-md-1">
+		<img class="card-img-top" src="{% static 'images/c4.png' %}">
+		<h5 class="p-1 pt-2">Mom and Baby</h5>
+	</div>
+
+<div><h6 class='pull-right pt-2'>View More</h6></div>
 </div>
 
 <!-- Brands -->
@@ -108,6 +109,8 @@
 			<img class="card-img-top" src="{% static 'images/b6.jpg' %}">
 			<h5 class="p-1 pt-2">Nivea</h5>
 		</div>
+
+		<div><h6 class='pull-right'>View More</h6></div>
 </div>
 
 <div class='mt-5' id='why' data-aos='fade-up'>

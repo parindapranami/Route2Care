@@ -46,6 +46,13 @@ def medicinePage(request,id):
     medPage = Medicine.objects.get(id=id)
     return render(request, 'home/medicine_page.html', {'med': medPage})
 
+def searchResult(request):
+  s=request.GET['search']
+  m = Medicine.objects.filter(med_name__icontains=s)
+  return render(request,'home/search_results.html', {"meds": m})
+
+
+
 def registerPage(request):
   form = CreateUserForm()
   if request.method == 'POST':

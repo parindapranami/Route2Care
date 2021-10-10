@@ -12,22 +12,25 @@
     background-repeat:  no-repeat;
     background-size: cover;
     background-position: center;
-    min-height:300px;
+    min-height:500px;
     background-color:#548C2F;
-    color:#fff;
+    color:#000;
     text-align: center;
-    animation: image 5s infinite alternate;
+    animation: image 10s infinite alternate;
 }
+
+
+
 /* animation: image 5s infinite alternate; */
 @keyframes image {
   0% {
-    background-image: url('https://images.unsplash.com/photo-1603398938378-e54eab446dde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-image: url('../images/bg2.jpg');
   }
   50% {
-    background-image: url('https://images.unsplash.com/photo-1628132263281-2b950c3d8c91?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80');
+    background-image: url('../images/bg1.jpg');
   }
   100% {
-    background-image: url('https://images.unsplash.com/photo-1614146283535-0f71856a4615?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1789&q=80');
+    background-image: url('../images/bg3.jpg');
   }
 }
 
@@ -36,7 +39,12 @@
 }
 #svgs h3{
   text-align: center;
-  padding:5%;
+  padding:2% 0 5% 0;
+  font-size: 120%;
+}
+#svgs span{
+  padding:10% 0 0 0;
+  font-size: 200%;
 }
 
 #why h4{
@@ -169,14 +177,33 @@ display: inline-block;
 body{
   font-family: 'Montserrat';
 }
-.card{
+
+/* Categories and Brands */
+.brands .card{
   height:10%;
-  width:13%;
+  width:15%;
   border:none;
+  margin-right: 5%;;
 }
-.card h5{
+.brands .card h5{
   font-size: 1.2vw;
   text-align: center;
   margin-top: 5%;
 }
+.cats , .brands{
+  display: flex;
+  align-items: center;
+}
+.cats .card{
+  height:10%;
+  width:24%;
+  border:none;
+ 
+  border:1px #ddd solid;
 
+}
+.cats .card h5{
+  font-size: 1.4vw;
+  text-align: center;
+  margin-top: 5%;
+}
