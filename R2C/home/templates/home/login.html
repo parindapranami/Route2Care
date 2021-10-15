@@ -76,12 +76,12 @@ integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwr
 		</form>
 	</div> -->
 	<div class="form-container sign-in-container">
-		<form method="POST" action="/">
+		<form method="POST" action="">
 			{% csrf_token %}
 			<h1>Sign in</h1>
 
-			<input type="text" placeholder="Username" />
-			<input type="password" placeholder="Password" />
+			<input name="username" type="text" placeholder="Username" />
+			<input name="password" type="password" placeholder="Password" />
 			
 
 			<button type='submit'>Sign In</button>
