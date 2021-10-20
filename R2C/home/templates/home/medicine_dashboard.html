@@ -32,6 +32,7 @@
 				<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{ med.med_name }}</a></h4>
 				<div class="product-bottom-details">
 					<div class="product-price">Rs. {{ med.mrp }}</div>
+					<button><a class='' href="{%url 'medicinePage' id=med.id %}">View Medicine</a></button>
 					<button data-medicine="{{med.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
 					<!-- <div class="product-links">
 						<a href=""><i class="fa fa-shopping-cart"></i></a>

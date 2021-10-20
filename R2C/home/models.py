@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.expressions import F
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -27,6 +28,12 @@ class Medicine(models.Model):
 
     def __str__(self):
         return self.med_name
+
+class Prescription(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True)
+    customer = models.ForeignKey(Customer,null=True,on_delete=models.SET_NULL)
+    med = models.CharField(("Medicine Name"),max_length=200,null=False,default="Crocin")
+    pres=models.FileField(null=False,upload_to='Prescriptions')
 
 # class Category(models.Model):
 #     category = models.CharField(("Category"),max_length=200,null=True)

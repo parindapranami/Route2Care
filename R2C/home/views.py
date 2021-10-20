@@ -57,7 +57,21 @@ def medicinePage(request,id):
 
   medPage = Medicine.objects.get(id=id)
   context = {'med': medPage,'cartItems':cartItems}
+
+  if request.method=='POST':
+    pres = request.FILES.get('pres')
+    med = medPage.med_name
+    customer = request.user
+    file = Prescription.objects.create(med=med,pres=pres) #,customer=customer
+    file.save()
+    print(file)
+    
   return render(request, 'home/medicine_page.html', context)
+
+
+  
+ 
+
 
 def searchResult(request):
   s=request.GET['search']

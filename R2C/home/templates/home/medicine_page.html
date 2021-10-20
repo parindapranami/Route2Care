@@ -11,20 +11,27 @@
 
 <div class='container'>
 
-<div class='medPage row'>
-	<img class='col-md-4' src="{% static 'images/b7.jpg' %}" alt='Medicine Thumbnail' height='150%' width='100%'>
+<div class='medPage'>
 	<div class='col-md-8 px-md-5 mt-sm-2'>
 		<h1 class='medTitle'>{{med.med_name}}</h1>
 		<h5 class='medBrand'>{{med.manufacturer}}</h5>
 		<hr>
 		<h2 class='medPrice'>Rs. {{med.mrp}}</h2>
 		
+		{% if med.prescription == "Y" %}
 		<div class='pres my-2'>
-			<h3 class='medHeading'>Upload Prescription</h3>
-			<input type="file" class='form-control' required>
-		</div>
+		<form method="post" action="" enctype="multipart/form-data">
+		{% csrf_token %}
+			<h3 class='medHeading '>Upload Prescription</h3>
+			<input name='pres' type="file" class='form-control' required>
+			
+			<button type='submit' onClick='showAdd()' id='atc'data-medicine="{{med.id}}" data-action="add" class='btn btn-dark my-3 p-2 addToCart update-cart'>Add To Cart</button>
 
-		<button data-medicine="{{med.id}}" data-action="add" class='btn btn-dark my-3 p-2 addToCart update-cart'>Add To Cart</button>
+		</form>
+		</div>
+		{% endif %}
+
+		
 		<!-- <button class='btn btn-dark my-3 p-2 addToCart'>Add To Cart</button> -->
 
 		<div class='row mt-4'>
@@ -57,7 +64,9 @@
 <script>
 		$(document).ready(function(){
 			$(".uses").hide();
-			$(".sideeffects").hide();
+		 $("form").submit(function(){
+   $("#atc").show();
+  });
 			$(".cons").hide();
 		  $(".showUses").click(function(){
 			$(".uses").toggle();

@@ -15,3 +15,5 @@ class CustomerForm(ModelForm):
         fields = '__all__'
         exclude = ['user']
 
+
+

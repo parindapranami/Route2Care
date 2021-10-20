@@ -194,6 +194,10 @@ body{
   display: flex;
   align-items: center;
 }
+.cats a, .brands a{
+  text-decoration: none;
+  color: #000;
+}
 .cats .card{
   height:10%;
   width:24%;

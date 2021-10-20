@@ -84,4 +84,9 @@
     padding:0 3%;
     margin-top: 1%;
     font-weight: bold; 
+    color:#fff;
+}
+#r2c a{
+    text-decoration: none;
+    color:#fff;
 }
