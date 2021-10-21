@@ -1,6 +1,7 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block body %}
+<div class="container">
      <div class="row">
 		<div class="col-lg-6">
 			<div class="box-element" id="form-wrapper">
@@ -37,7 +38,7 @@
 					</div>
 
 					<hr>
-					<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+					<input style="margin:5px; background-color :#104911; " id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
 				</form>
 			</div>
 
@@ -52,9 +53,9 @@
 
 		<div class="col-lg-6">
 			<div class="box-element">
-				<a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+				<a style="margin:5px; background-color :#104911; color:#fff; " class="btn" href="{% url 'cart' %}">Back to Cart</a>
 				<hr>
-				<h3>Order Summary</h3>
+				<h3 class='text-center'>Order Summary</h3>
 				<hr>
 				{% for item in items %}
 				<div class="cart-row">
@@ -68,6 +69,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 
 	<script src="https://www.paypal.com/sdk/js?client-id=AQzpgA8mr9ceXR7PYi33-pPzQS4a3pHnzlKYuIMuvPpb0Nn9bSOuCXcXlIXsPSUnLV_OB9Hcvt_waNW4&currency=USD&disable-funding=credit"></script>
 
@@ -179,12 +181,12 @@
 	    	.then((response) => response.json())
 	    	.then((data) => {
 				console.log('Success:', data);
-				alert('Transaction completed');  
+				alert("Transaction completed");  
 
 				cart = {}
 				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
 
-				window.location.href = "{% url 'medicineDashboard' %}"
+				window.location.href = "{% url 'checkout' %}"
 
 				})
 	    }

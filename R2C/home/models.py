@@ -18,6 +18,7 @@ class Customer(models.Model):
 
 class Medicine(models.Model):
     med_name = models.CharField(("Medicine Name"),max_length=200,null=False,default="Crocin")
+    image = models.CharField(("Images"),max_length=1000,null=False,default="https://newassets.apollo247.com/pub/media/catalog/product/a/z/aza0002.jpg")
     prescription = models.CharField(("Prescription"),max_length=500,null=False,default="Y")
     Type_of_Sell = models.CharField(("Type of Sell"),max_length=500,null=True)
     manufacturer = models.CharField(("Manufacturer"),max_length=500,null=False,default="Cipla")
@@ -35,22 +36,8 @@ class Prescription(models.Model):
     med = models.CharField(("Medicine Name"),max_length=200,null=False,default="Crocin")
     pres=models.FileField(null=False,upload_to='Prescriptions')
 
-# class Category(models.Model):
-#     category = models.CharField(("Category"),max_length=200,null=True)
-#     med_name = models.CharField(("Name"),max_length=200,null=False,default="Crocin")
-#     Type_of_Sell = models.CharField(("Type of Sell"),max_length=500,null=True)
-#     mrp = models.CharField(("MRP"),max_length=500,null=False,default='50')
-#     manufacturer = models.CharField(("Manufacturer"),max_length=500,null=False,default="Cipla")
-    
-#     def __str__(self):
-#         return self.med_name
 
 class Order(models.Model):
-    # STATUS = (
-    #     ('Pending','Pending'),
-    #     ('Out for Delivery','Out for Delivery'),
-    #     ('Delivered','Delivered'),
-    # )
 
     date_created = models.DateTimeField(auto_now_add=True)
     customer = models.ForeignKey(Customer,null=True,on_delete=models.SET_NULL)
@@ -93,10 +80,6 @@ class OrderItem(models.Model):
 
     @property
     def get_total(self):
-        # value = self.medicine.mrp
-        # for i in value:
-        #     if self.medicine.mrp = 
-        # floating_value = float(value.replace(',', '.'))
         total = float(self.medicine.mrp) * float(self.quantity)
         return total
 
@@ -106,7 +89,6 @@ class ShippingAddress(models.Model):
     address = models.CharField(max_length=200, null=False)
     city = models.CharField(max_length=200, null=False)
     state = models.CharField(max_length=200, null=False)
-    # country = models.CharField(max_length=200, null=False, default='India')
     zipcode = models.CharField(max_length=200, null=False)
     date_added = models.DateTimeField(auto_now_add=True)
 

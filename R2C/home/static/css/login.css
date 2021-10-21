@@ -71,7 +71,21 @@
 	margin: 8px 0;
 	width: 100%;
 }
-
+#cart-icon{
+	width:25px;
+	display: inline-block;
+	margin-left: 5px;
+}
+#cart-total{
+	display: block;
+	text-align: center;
+	color:#fff;
+	background-color: red;
+	width: 20px;
+	height: 25px;
+	border-radius: 50%;
+	font-size: 14px;
+}
 .container {
 	
 	background-color: #fff;
@@ -195,18 +209,18 @@
 	transform: translateX(20%);
 }
 
-.social-container {
-	margin: 20px 0;
+.errorlist
+{
+	color: red;	
+	padding: 2% 5% 0 5%;
+	text-align: center;
+	font-size: 80%;
+}
+	
+.errorlist li{
+	list-style-type: none;
 }
 
-.social-container a {
-	border: 1px solid #DDDDDD;
-    background-color:#ec6767;
-	border-radius: 50%;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
+.error input, .error select {
+	border: 2px red solid;
 }

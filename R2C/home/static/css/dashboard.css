@@ -10,7 +10,7 @@
 .product-card {
     width: 300px;
     position: relative;
-    box-shadow: 0 2px 7px #dfdfdf;
+    box-shadow: 0 2px 7px #104911;
     margin: 50px auto;
     background: #fafafa;
 }
@@ -38,7 +38,7 @@
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #ccc;
+    color: #363636;
     margin-bottom: 18px;
 }
 
@@ -64,15 +64,10 @@
 }
 
 .product-bottom-details {
-    overflow: hidden;
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
 
-.product-bottom-details div {
-    float: left;
-    width: 50%;
-}
 
 .product-price {
     font-size: 18px;
@@ -123,6 +118,53 @@
 .dashTitle{
     border-left : solid #104911 px;
 }
+.dashInfo{
+    text-align: left;
+    padding:0 0 0 5%;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.dashName{
+    text-align: left;
+    padding:0 0 0 5%;
+    margin-left: -4px;
+}
+
+.viewMed button{
+    background-color: #fff;
+    color:black;
+}
+.viewMed a{
+    color:black
+}
+.viewMed a:hover{
+    color:#fff;
+}
+.viewMed button:hover{
+    color:#fff !important;
+    background-color: #104911;
+}
+
+
+.pagination {
+    justify-content: center;
+    
+}
+
+.pagination span {
+    margin: 5px;
+    color: #104911;
+    font-size: 25px;
+}
+
+.pagination a {
+    margin: 5px;
+    padding: 5px;
+    color: #104911;
+}
+
+
 
 /* Medicine Page */
 .medPage{
@@ -143,7 +185,7 @@
 }
 .medHeading{
     font-size:120%;
-    padding:2% 0 0 0;
+    padding:2% 0 0 1%;
 }
 .medPage p{
     font-size: 75%;
@@ -155,5 +197,16 @@
     padding:3% 0 2% 0;
 }
 .addToCart{
-    width:50%;
+    width:100%;
+    background-color: #104911;
+    color: #fff;
+}
+.addToCart:hover{
+    width:100%;
+    background-color: #104911;
+    color: #fff;
+}
+
+.medInfo p{
+    overflow-x:auto;
 }

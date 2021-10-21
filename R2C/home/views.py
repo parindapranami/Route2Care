@@ -34,21 +34,8 @@ def medicineDashboard(request):
     page_obj = p.page(1)
   except EmptyPage:
     page_obj = p.page(p.num_pages)
-  
-  params = {
-    "engine": "google",
-    "q": "Azax 500 Tablet",
-    "api_key": "7824c1c8775fbd52fdb353d265176f682f024da49e3ca0998bbcdc68cf981f30",
-    "tbm" : "isch",
-    "ijn" : 0,
-  }
-  search = GoogleSearch(params)
-  results = search.get_dict()
-  # print(results)
-  img = results['images_results'][0]['original']
-  print(img)
-  img = "https://onemg.gumlet.io/image/upload/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/v1600083083/cropped/ahmbxmi2bd1wiojpxqld.jpg"
-  context = {'page_obj': page_obj,'images': img,'cartItems':cartItems}  
+ 
+  context = {'page_obj': page_obj,'cartItems':cartItems}  
   return render(request,'home/medicine_dashboard.html', context)
   
 def medicinePage(request,id):
@@ -62,14 +49,11 @@ def medicinePage(request,id):
     pres = request.FILES.get('pres')
     med = medPage.med_name
     customer = request.user
-    file = Prescription.objects.create(med=med,pres=pres) #,customer=customer
+    file = Prescription.objects.create(med=med,pres=pres)
     file.save()
     print(file)
     
-  return render(request, 'home/medicine_page.html', context)
-
-
-  
+  return render(request, 'home/medicine_page.html', context)  
  
 
 
@@ -79,44 +63,42 @@ def searchResult(request):
   return render(request,'home/search_results.html', {"meds": m})
 
 def registerPage(request):
+  data = cartData(request)
+  cartItems = data['cartItems']
   form = CreateUserForm()
   if request.method == 'POST':
     form = CreateUserForm(request.POST)
     if form.is_valid():
       user = form.save()
       username = form.cleaned_data.get('username')
-      messages.success(request,'Account was created for ' + username)
+      
       return redirect('login')
   
-  context = {'form':form}
+  context = {'form':form,'cartItems':cartItems}
   return render(request,'home/register1.html',context)
 
 def loginPage(request):
-  print('shubh')
-  if request.method == 'POST':
-    print('parinda')
+  data = cartData(request)
+  cartItems = data['cartItems']  
+  if request.method == 'POST':   
     username = request.POST.get('username')
     password = request.POST.get('password')
-
     user = authenticate(request,username=username, password=password)
     if user is not None:
-      print('manasi')
       login(request,user)
-      return redirect('home')
+      return redirect('medicineDashboard')
     else:
-      print('mehta')
       messages.info(request,'Username or password is incorrect')
       return render(request,'home/login.html')  
 
-  context = {}
+  context = {'cartItems':cartItems}
   return render(request,'home/login.html',context)
 
 def logoutUser(request):
     logout(request)
     return redirect('home')
 
-# def customerDashboard(request,pk):
-#   customer = Customer.objects.get(id=pk)
+
 def cartPage(request):
   data = cartData(request)
   cartItems = data['cartItems']
@@ -125,9 +107,9 @@ def cartPage(request):
 
   context = {'items':items,'order':order,'cartItems':cartItems}
   return render(request, 'home/cart.html',context)
-  # return render(request,'home/cart.html')
+ 
 
-# @csrf_exempt
+# @csrf_exempt 
 def checkoutPage(request):
   data = cartData(request)
   cartItems = data['cartItems']
@@ -136,7 +118,7 @@ def checkoutPage(request):
   
   context = {'items':items,'order':order,'cartItems':cartItems}
   return render(request, 'home/checkout.html',context)
-  # return render(request, 'home/checkout.html')
+
 
 def updateItem(request):
   data = json.loads(request.body)
@@ -166,7 +148,7 @@ def updateItem(request):
 
 # @csrf_exempt
 def processOrder(request):
-  # print('Data:',request.body)
+
   print('transaction')
   transaction_id = datetime.datetime.now().timestamp()
   data = json.loads(request.body)
@@ -193,7 +175,6 @@ def processOrder(request):
       address = data['shipping']['address'],
       city = data['shipping']['city'],
       state = data['shipping']['state'],
-      # country = data['shipping']['country'],
       zipcode = data['shipping']['zipcode'],
     )
 

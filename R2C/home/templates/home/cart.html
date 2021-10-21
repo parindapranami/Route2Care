@@ -1,11 +1,12 @@
 {% extends 'home/base.html' %}
 {% load static %}
 {% block body %}
-	<div class="row">
+<div class='container'>
+	<div class="row ">
 		<div class="col-lg-12">
 			<div class="box-element">
 
-				<a  class="btn btn-outline-dark" href="{% url 'medicineDashboard' %}">&#x2190; Continue Shopping</a>
+				<a  style="background-color :#104911; color: #fff;" class="btn btn-outline-dark" href="{% url 'medicineDashboard' %}">Continue Shopping</a>
 
 				<br>
 				<br>
@@ -14,7 +15,7 @@
 						<th><h5>Items: <strong>{{order.get_cart_items}}</strong></h5></th>
 						<th><h5>Total:<strong> Rs. {{order.get_cart_total|floatformat:2}}</strong></h5></th>
 						<th>
-							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+							<a style="float:right; margin:5px; background-color :#104911; " class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
 						</th>
 					</tr>
 				</table>
@@ -47,4 +48,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 {% endblock body %}

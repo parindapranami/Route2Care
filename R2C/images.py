@@ -2,10 +2,12 @@ from numpy.lib.type_check import imag
 import pandas as pd
 from serpapi import GoogleSearch
 
+import csv
+
 cols_list = ["Medicine Name"]
-df = pd.read_csv("R2C/drugs.csv", encoding = "ISO-8859-1", usecols= cols_list)
-# print(df)
-medicines = df["Medicine Name"].head()
+df = pd.read_csv("drugs.csv", encoding = "ISO-8859-1", usecols= cols_list)
+
+medicines = df["Medicine Name"][20:40]
 images = []
 
 for medicine in medicines:
@@ -19,12 +21,15 @@ for medicine in medicines:
     }
     search = GoogleSearch(params)    
     results = search.get_dict()
-    if results['search_metadata']['status']=='Success':
-        # print(results)
+    if results['search_metadata']['status']=='Success':        
         img = results['images_results'][0]['original']
         images.append(img)
-    # print(img)
-print(images)
 
-# for image in images:
-#     df[]
+
+df = pd.read_csv("drugs.csv", encoding = "ISO-8859-1")
+rows = images
+file = open('images.csv', 'w+') 
+with file:     
+    write = csv.writer(file) 
+    write.writerow(rows) 
+

@@ -13,7 +13,8 @@
 	<div class='jumbotron custDashboard mt-4 row'>
 	<div class='col-md-6 dashTitle'>
 		<h1 class=''>Route2Care</h1>
-		<h3 class='dashName'>Welcome, {{request.user}}</h3>
+		<h3 class='dashName'>Welcome {{request.user.username}}</h3>
+		<h5 class='dashInfo pl-5'>You can browse through our products or search for a particular medicine</h5>
 	</div>
 	<img class='col-md-6' src="{% static 'images/dashboard.png' %}" >
 	</div>
@@ -24,37 +25,37 @@
 	
 		<div class="product-card col-md-3">
 			<div class="product-tumb">
+
 				<!-- web scraping here -->
-				<img src="{% static 'images/aceclofenac.png' %}" alt="Medicine Image">
+				<img src="{{med.image}}" alt="Medicine Image">
 			</div>
 			<div class="product-details">
-				<span class="product-category">Medicines</span>
 				<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{ med.med_name }}</a></h4>
+				<span class="product-category">{{med.Type_of_Sell}}</span>
 				<div class="product-bottom-details">
 					<div class="product-price">Rs. {{ med.mrp }}</div>
-					<button><a class='' href="{%url 'medicinePage' id=med.id %}">View Medicine</a></button>
-					<button data-medicine="{{med.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-					<!-- <div class="product-links">
-						<a href=""><i class="fa fa-shopping-cart"></i></a>
-					</div> -->
+					<br>
+					<div class='text-center viewMed'><button class='btn btn-outline-dark  mt-3'><a href="{%url 'medicinePage' id=med.id %}">View Medicine</a></button></div>
 				</div>				
 			</div>
-			
 		</div>
 	{% endfor %}
 	</div>
-	<center>
-        {%if page_obj.has_previous %} {# whether the previous page exists #}
-            <a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
-        {% endif %}
-        <span>{{page_obj.number}}</span> {# the current page number #}
-        
-        {%if page_obj.has_next %} {# whether the next page exists #}
-            <a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
-        {% endif %}
-    </center>
+	<div class="pagination">
+		
+			{%if page_obj.has_previous %} {# whether the previous page exists #}
+				<a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
+			{% endif %}
+			<span>{{page_obj.number}}</span> {# the current page number #}
+			
+			{%if page_obj.has_next %} {# whether the next page exists #}
+				<a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
+			{% endif %}
+		
 	</div>
+	
 	</div>
+	
 	<body>
 	</html>
 
