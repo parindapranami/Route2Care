@@ -1,0 +1,212 @@
+/* Medicine Card */
+.medicineList a
+{
+    text-decoration: none;
+}
+.product-details a
+{
+    text-decoration: none;
+}
+.product-card {
+    width: 300px;
+    position: relative;
+    box-shadow: 0 2px 7px #104911;
+    margin: 50px auto;
+    background: #fafafa;
+}
+
+.product-tumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    padding: 50px;
+    background: #f0f0f0;
+}
+
+.product-tumb img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-details {
+    padding: 30px;
+}
+
+.product-category {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #363636;
+    margin-bottom: 18px;
+}
+
+.product-details h4 a {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    color: #363636;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.product-details h4 a:hover {
+    color: #104911;
+}
+
+.product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+}
+
+.product-bottom-details {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+
+.product-price {
+    font-size: 18px;
+    color: #104911;
+    font-weight: 600;
+}
+
+.product-links {
+    text-align: right;
+}
+
+.product-links a {
+    display: inline-block;
+    margin-left: 5px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.product-links a:hover {
+    color: #104911;
+}
+
+/* Medicine Dashboard */
+.custDashboard{
+    background-repeat:  no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height:250px;
+    background-color:#fff;
+    color:#000;
+    text-align: center;
+    border: solid #ccc 1px;
+}
+
+.custDashboard h1{
+    text-align: left;
+    font-size:400%;
+    padding:20% 0 5% 5%;
+    color:#000;
+  }
+.custDashboard h3{
+    text-align: left;
+    font-size:200%;
+    padding:2% 0 10% 8%;
+    color:#000;
+}
+.dashTitle{
+    border-left : solid #104911 px;
+}
+.dashInfo{
+    text-align: left;
+    padding:0 0 0 5%;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.dashName{
+    text-align: left;
+    padding:0 0 0 5%;
+    margin-left: -4px;
+}
+
+.viewMed button{
+    background-color: #fff;
+    color:black;
+}
+.viewMed a{
+    color:black
+}
+.viewMed a:hover{
+    color:#fff;
+}
+.viewMed button:hover{
+    color:#fff !important;
+    background-color: #104911;
+}
+
+
+.pagination {
+    justify-content: center;
+    
+}
+
+.pagination span {
+    margin: 5px;
+    color: #104911;
+    font-size: 25px;
+}
+
+.pagination a {
+    margin: 5px;
+    padding: 5px;
+    color: #104911;
+}
+
+
+
+/* Medicine Page */
+.medPage{
+    margin:5% 2%;
+    margin-bottom:20%;
+    padding:3%;
+    border: 1px solid #104911;
+}
+.medBrand{
+    color:#104911;
+    font-size:80%;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.medTitle{
+    text-transform: uppercase;
+    font-size:250%;
+}
+.medHeading{
+    font-size:120%;
+    padding:2% 0 0 1%;
+}
+.medPage p{
+    font-size: 75%;
+}
+.medPrice{
+    font-size:180%;
+    font-weight: bold;
+    color:#104911;
+    padding:3% 0 2% 0;
+}
+.addToCart{
+    width:100%;
+    background-color: #104911;
+    color: #fff;
+}
+.addToCart:hover{
+    width:100%;
+    background-color: #104911;
+    color: #fff;
+}
+
+.medInfo p{
+    overflow-x:auto;
+}

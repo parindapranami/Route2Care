@@ -1,0 +1,63 @@
+{%extends 'home/base.html'%}
+{% load static %}
+{%block body%}
+	<html>
+	<head>
+		<meta content='maximum-scale=1.0, initial-scale=1.0, width=device-width' name='viewport'>
+		<link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+	</head>
+	<body>
+
+	<div class='container'>
+
+	<div class='jumbotron custDashboard mt-4 row'>
+	<div class='col-md-6 dashTitle'>
+		<h1 class=''>Route2Care</h1>
+		<h3 class='dashName'>Welcome {{request.user.username}}</h3>
+		<h5 class='dashInfo pl-5'>You can browse through our products or search for a particular medicine</h5>
+	</div>
+	<img class='col-md-6' src="{% static 'images/dashboard.png' %}" >
+	</div>
+
+	<div class='medicineList  row'>
+	
+	{% for med in page_obj.object_list %}
+	
+		<div class="product-card col-md-3">
+			<div class="product-tumb">
+
+				<!-- web scraping here -->
+				<img src="{{med.image}}" alt="Medicine Image">
+			</div>
+			<div class="product-details">
+				<h4><a class='' href="{%url 'medicinePage' id=med.id %}">{{ med.med_name }}</a></h4>
+				<span class="product-category">{{med.Type_of_Sell}}</span>
+				<div class="product-bottom-details">
+					<div class="product-price">Rs. {{ med.mrp }}</div>
+					<br>
+					<div class='text-center viewMed'><button class='btn btn-outline-dark  mt-3'><a href="{%url 'medicinePage' id=med.id %}">View Medicine</a></button></div>
+				</div>				
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+	<div class="pagination">
+		
+			{%if page_obj.has_previous %} {# whether the previous page exists #}
+				<a href="?page={{page_obj.previous_page_number}}"><</a> {# link to the prev page #}
+			{% endif %}
+			<span>{{page_obj.number}}</span> {# the current page number #}
+			
+			{%if page_obj.has_next %} {# whether the next page exists #}
+				<a href="?page={{page_obj.next_page_number}}">></a> {# link to the next page #}
+			{% endif %}
+		
+	</div>
+	
+	</div>
+	
+	<body>
+	</html>
+
+
+{%endblock%}
